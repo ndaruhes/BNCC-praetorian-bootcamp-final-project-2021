@@ -1,7 +1,7 @@
 ## BOOTCAMP CALON PRAETORIAN 2021 - FINAL PROJECT
 ## Install App
 1. git clone https://github.com/ndaruhes/BNCC-final-project-2021.git
-2. cd https://github.com/ndaruhes/BNCC-final-project-Assigment
+2. cd BNCC-praetorian-bootcamp-final-project-2021 (Your Directory)
 3. composer install
 4. npm install
 
