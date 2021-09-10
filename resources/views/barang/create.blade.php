@@ -15,7 +15,7 @@
 
                     <div class="form-group">
                         <label for="">Nama Barang</label>
-                        <input type="text" class="form-control @error('nama_barang') is-invalid @enderror"" placeholder="Masukkan nama barang" name="nama_barang" value="{{ old('nama_barang') }}">
+                        <input type="text" class="form-control @error('nama_barang') is-invalid @enderror" placeholder="Masukkan nama barang" name="nama_barang" value="{{ old('nama_barang') }}">
                         @error('nama_barang')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -27,7 +27,7 @@
                         <label for="">Harga Barang</label>
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon1">Rp.</span>
-                            <input type="number" class="form-control @error('harga_barang') is-invalid @enderror"" placeholder="Masukkan harga barang" name="harga_barang" value="{{ old('harga_barang') }}">
+                            <input type="number" class="form-control @error('harga_barang') is-invalid @enderror" placeholder="Masukkan harga barang" name="harga_barang" value="{{ old('harga_barang') }}">
                             @error('harga_barang')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -38,7 +38,7 @@
 
                     <div class="form-group">
                         <label for="">Stok</label>
-                        <input type="number" class="form-control @error('stok') is-invalid @enderror"" placeholder="Masukkan stok barang" name="stok" value="{{ old('stok') }}">
+                        <input type="number" class="form-control @error('stok') is-invalid @enderror" placeholder="Masukkan stok barang" name="stok" value="{{ old('stok') }}">
                         @error('stok')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

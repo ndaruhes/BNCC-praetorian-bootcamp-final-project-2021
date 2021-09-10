@@ -133,10 +133,25 @@
                 </div>
             </div>
         </div>
-
     </div>
 
+    <!-- TOAST -->
+    @if(session('status'))
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+        <div class="toast align-items-center text-white bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <i class="uil uil-check-circle me-2"></i> {{session('status')}}
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+    @endif
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function(){
             $('#confirmDeleteModal').on('show.bs.modal', function(e) {
@@ -149,6 +164,12 @@
                 $(this).find('#confirm_accept').attr('action', $(e.relatedTarget).data('uri'));
             });
         });
+
+        const toastElList = [].slice.call(document.querySelectorAll('.toast'))
+        const toastList = toastElList.map(function (toastEl) {
+            return new bootstrap.Toast(toastEl)
+        })
+        toastList.forEach(toast => toast.show());
     </script>
     @yield('addedScript')
 </body>

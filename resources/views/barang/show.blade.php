@@ -2,7 +2,7 @@
 @section('title', $barang->nama_barang.' - PT Life Mart')
 
 @section('content')
-<div class="col-md-12 d-flex justify-content-center mt-3">
+<div class="col-md-12 d-flex justify-content-center my-4">
     <div class="col-md-5">
         @if(session('errorStatus'))
             <div class="alert alert-danger"><i class="uil uil-times me-2"></i>{{session('errorStatus')}}</div>
@@ -45,21 +45,36 @@
                                         <label for="">Jumlah Pesanan</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="uil uil-shopping-cart"></i></span>
-                                            <input type="number" class="form-control" placeholder="Mau pesan berapa" name="jumlah_pesanan">
+                                            <input type="number" class="form-control @error('jumlah_pesanan') is-invalid @enderror" placeholder="Mau pesan berapa" name="jumlah_pesanan">
+                                            @error('jumlah_pesanan')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Kode Pos</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="uil uil-sign-right"></i></span>
-                                            <input type="number" class="form-control" placeholder="Masukkan Kode POS" name="kode_pos">
+                                            <input type="number" class="form-control @error('kode_pos') is-invalid @enderror" placeholder="Masukkan Kode POS" name="kode_pos">
+                                            @error('kode_pos')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label for="">Masukkan Alamat</label>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1"><i class="uil uil-truck"></i></span>
-                                            <textarea class="form-control" placeholder="Ketik alamat disini" name="alamat"></textarea>
+                                            <textarea class="form-control @error('alamat') is-invalid @enderror" placeholder="Ketik alamat disini" name="alamat"></textarea>
+                                            @error('alamat')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
